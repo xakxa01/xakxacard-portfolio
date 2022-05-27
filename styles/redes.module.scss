@@ -1,0 +1,22 @@
+@import "variables";
+
+.redes__container {
+  display: flex;
+  align-items: center;
+  width: 60%;
+  justify-content: space-between;
+  margin-bottom: 5px;
+
+  .redes__link {
+    margin: 2px;
+    outline: none;
+
+    &:hover {
+      transform: scale(1.1);
+      -webkit-transform: scale(1.1);
+      -moz-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      -o-transform: scale(1.1);
+    }
+  }
+}
