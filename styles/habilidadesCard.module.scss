@@ -33,7 +33,7 @@
 
   &::after {
     content: "";
-    background: url(../public/assets/svg/black.svg) no-repeat bottom left;
+    background: url(/assets/svg/black.svg) no-repeat bottom left;
     background-size: contain;
     width: 100%;
     height: 10%;
@@ -45,7 +45,7 @@
 
   &::before {
     content: "";
-    background: url(../public/assets/svg/black.svg) no-repeat top right;
+    background: url(/assets/svg/black.svg) no-repeat top right;
     background-size: contain;
     width: 100%;
     height: 10%;

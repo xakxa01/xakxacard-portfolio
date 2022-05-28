@@ -13,7 +13,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 
   .cardContainer {
@@ -34,7 +34,7 @@
     &::before {
       content: "";
       position: absolute;
-      background: url(../public/assets/svg/black.svg) no-repeat center center;
+      background: url(/assets/svg/black.svg) no-repeat center center;
       height: 100%;
       width: 100%;
     }
