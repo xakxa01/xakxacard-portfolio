@@ -7,26 +7,20 @@ export default function Redes() {
 		{
 			socialMedia: "instagram",
 			link: "https://www.instagram.com/xakxa01",
-			icon: `https://img.icons8.com/material-rounded/50/F5F5F5/instagram-new.png`,
+			icon: '/assets/icons/icons8-instagram-17.svg',
 			name: "xakxa01"
 		},
 		{
 			socialMedia: "github",
 			link: "https://www.github.com/xakxa01",
-			icon: `https://img.icons8.com/material-rounded/50/F5F5F5/github.png`,
+			icon: '/assets/icons/github.svg',
 			name: "xakxa01"
 		},
 		{
 			socialMedia: "linkedin",
 			link: "https://www.linkedin.com/in/carlos-xavier-g%C3%B3mez-barriento-931aa6223/",
-			icon: `https://img.icons8.com/material-rounded/50/F5F5F5/linkedin--v1.png`,
+			icon: "/assets/icons/linkedin.svg",
 			name: "carlos xavier gomez barriento"
-		},
-		{
-			socialMedia: "twitter",
-			link: "https://www.twitter.com/xakxa01",
-			icon: `https://img.icons8.com/material-rounded/50/F5F5F5/twitter.png`,
-			name: "Xakxa01"
 		},
 	];
 

@@ -35,12 +35,17 @@
     content: "";
     background: url(/assets/svg/black.svg) no-repeat bottom left;
     background-size: contain;
-    width: 100%;
+    width: 15%;
     height: 10%;
     position: absolute;
     bottom: 0;
     left: 0;
     margin: 10px;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
   }
 
   &::before {

@@ -30,6 +30,7 @@ $amarillo: #ffe754;
   -o-border-radius: 20px;
   overflow: hidden;
   position: absolute;
+  z-index: 10;
 }
 
 @mixin cardTitleTemplate {

@@ -28,6 +28,7 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     background: #222831;
+    z-index: 10;
 
     &::before {
       content: "";
@@ -36,5 +37,34 @@
       height: 100%;
       width: 100%;
     }
+
+    &::after {
+      content: "";
+      background: url(/assets/icons/bxs-down-arrow.svg) no-repeat center bottom;
+      position: absolute;
+      height: 90%;
+      width: 100%;
+      z-index: -1;
+      animation: down-arrow-animation 0.5s ease-in-out infinite;
+      -webkit-animation: down-arrow-animation 0.5s ease-in-out infinite;
+      animation-direction: alternate;
+    }
+  }
+}
+
+@keyframes down-arrow-animation {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  100% {
+    transform: translateY(5%);
+    -webkit-transform: translateY(5%);
+    -moz-transform: translateY(5%);
+    -ms-transform: translateY(5%);
+    -o-transform: translateY(5%);
   }
 }

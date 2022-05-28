@@ -22,11 +22,11 @@
       -o-transition: all 0.3s ease-in-out;
 
       &:hover {
-        transform: scale(1.2);
-        -webkit-transform: scale(1.2);
-        -moz-transform: scale(1.2);
-        -ms-transform: scale(1.2);
-        -o-transform: scale(1.2);
+        transform: scale(1.2) rotate(90deg);
+        -webkit-transform: scale(1.2) rotate(90deg);
+        -moz-transform: scale(1.2) rotate(90deg);
+        -ms-transform: scale(1.2) rotate(90deg);
+        -o-transform: scale(1.2) rotate(90deg);
       }
     }
   }

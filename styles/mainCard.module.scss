@@ -11,6 +11,7 @@
   -o-border-radius: 20px;
   overflow: hidden;
   position: absolute;
+  z-index: 10;
 
   .background {
     width: 100%;
@@ -25,7 +26,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: $azul;
+      background: linear-gradient(132.26deg, #0099ff 40%, #08d9d6 60%);
       margin-top: -10px;
 
       .logo {

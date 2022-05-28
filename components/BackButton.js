@@ -8,7 +8,7 @@ export default function BackButton() {
 			<div className={styles.backButtonContainer}>
 				<div className={styles.backButton} >
 					<Image
-						src="https://img.icons8.com/material-rounded/35/0099ff/restart--v1.png"
+						src="/assets/icons/bx-refresh.svg"
 						alt="back button"
 						width={35}
 						height={35}

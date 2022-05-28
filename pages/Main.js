@@ -3,6 +3,7 @@ import BackButton from "../components/BackButton"
 import HabilidadesCard from "../components/cards/HabilidadesCards"
 import HabilidadesTitleCard from "../components/cards/HabilidadesTitleCard"
 import MainCard from "../components/cards/MainCard"
+import PortfilioCards from "../components/cards/PortfilioCards"
 import PortfolioTitle from "../components/cards/PortfolioTitle"
 import ParallaxText from "../components/ParallaxText"
 import Redes from "../components/Redes"
@@ -17,6 +18,7 @@ export default function Main() {
 		HabilidadesTitleCard,
 		HabilidadesCard,
 		PortfolioTitle,
+		PortfilioCards,
 	]
 	const reverseCardStackers = cardStackers.reverse()
 
