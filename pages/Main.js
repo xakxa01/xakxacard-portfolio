@@ -1,12 +1,12 @@
-import { createRef, useId, useMemo, useRef, useState } from "react"
+import { useId } from "react"
 import BackButton from "../components/BackButton"
 import HabilidadesCard from "../components/cards/HabilidadesCards"
-import HabilidadesTitleCard from "../components/cards/habilidadesTitleCard"
+import HabilidadesTitleCard from "../components/cards/HabilidadesTitleCard"
 import MainCard from "../components/cards/MainCard"
 import PortfolioTitle from "../components/cards/PortfolioTitle"
 import ParallaxText from "../components/ParallaxText"
 import Redes from "../components/Redes"
-import { SkillsProvider } from "../context/skillsContext"
+import { SkillsProvider } from "../context/SkillsContext"
 import styles from "../styles/Main.module.scss"
 
 export default function Main() {

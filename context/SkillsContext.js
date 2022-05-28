@@ -1,5 +1,4 @@
 import React from 'react'
-
 const skillsContext = React.createContext()
 
 function SkillsProvider({ children }) {

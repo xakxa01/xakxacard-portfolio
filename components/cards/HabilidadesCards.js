@@ -1,8 +1,8 @@
-import React, { useContext, useId } from 'react'
+import { useContext, useId } from 'react'
 import CardTemplate from '../CardTemplate'
 import styles from '../../styles/habilidadesCard.module.scss'
-import skillsContext from '../../context/skillsContext'
 import Image from 'next/image'
+import skillsContext from '../../context/SkillsContext'
 
 export default function HabilidadesCard() {
 	const { iconArray } = useContext(skillsContext)
