@@ -1,27 +1,32 @@
 @import "variables";
 
-.backButtonContainer {
-  background: url(/assets/svg/Vector.svg) no-repeat center center;
-  z-index: 100;
-  position: absolute;
-  bottom: -15px;
-  right: -10px;
-  padding: 16px;
-  cursor: pointer;
+.backButtonPosition {
+  width: 100%;
+  height: 100%;
 
-  .backButton {
-    transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
+  .backButtonContainer {
+    background: url(/assets/svg/Vector.svg) no-repeat center center;
+    z-index: 100;
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    padding: 16px;
+    cursor: pointer;
 
-    &:hover {
-      transform: scale(1.2);
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
+    .backButton {
+      transition: all 0.3s ease-in-out;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transition: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+      }
     }
   }
 }
