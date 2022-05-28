@@ -19,6 +19,33 @@ $amarillo: #ffe754;
   border: solid transparent 0.1px;
 }
 
+@mixin cardTemplate {
+  width: 43vh;
+  height: 69.6vh;
+  background: $blanco;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+}
+
+@mixin cardTitleTemplate {
+  @include cardTemplate;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    background: url("../public/assets/svg/gris.svg") no-repeat center center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
 @mixin interMedium {
   font-family: "Inter", sans-serif;
   font-weight: 500;

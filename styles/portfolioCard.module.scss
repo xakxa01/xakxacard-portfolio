@@ -1,0 +1,22 @@
+@import "variables";
+
+.portfolioTitle {
+  @include cardTitleTemplate;
+  justify-content: center;
+
+  .title {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    -webkit-text-orientation: upright;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: vertical-rl;
+    @include interBold;
+    text-transform: uppercase;
+    color: $negro3;
+
+    .blue {
+      color: $azul;
+    }
+  }
+}

@@ -2,10 +2,10 @@
 
 .backButtonContainer {
   background: url("../public/assets/svg/Vector.svg") no-repeat center center;
-  z-index: 10;
+  z-index: 100;
   position: absolute;
-  bottom: -20px;
-  right: 15px;
+  bottom: -15px;
+  right: -10px;
   padding: 16px;
   cursor: pointer;
 
