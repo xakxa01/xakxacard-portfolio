@@ -1,4 +1,4 @@
-import { useId } from "react"
+import { createRef, useId, useMemo, useRef, useState } from "react"
 import BackButton from "../components/BackButton"
 import HabilidadesCard from "../components/cards/HabilidadesCards"
 import HabilidadesTitleCard from "../components/cards/HabilidadesTitleCard"
@@ -23,16 +23,44 @@ export default function Main() {
 	]
 	const reverseCardStackers = cardStackers.reverse()
 
+	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
+
+	// used for outOfFrame closure
+	const currentIndexRef = useRef(currentIndex)
+
+	const childRefs = useMemo(() =>
+		cardStackers.map((i) => createRef())
+		, []
+	)
+
+	const updateCurrentIndex = (val) => {
+		setCurrentIndex(val)
+		currentIndexRef.current = val
+	}
+
+	const canGoBack = currentIndex < cardStackers.length - 1
+
+	// increase current index and show card
+	const goBack = async () => {
+		if (!canGoBack) return
+		const newIndex = currentIndex + 1
+		updateCurrentIndex(newIndex)
+		await childRefs[newIndex].current.restoreCard()
+		console.log("first")
+	}
+
+
 	return (
 		<>
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
 			<div className={styles.mainContainer}>
+				{/* <button onClick={() => goBack()}>hola</button> */}
 				<Redes />
 				<div className={styles.cardContainer}>
-					<BackButton />
-					{reverseCardStackers.map((Card) => (
+					<BackButton goBack={goBack} />
+					{reverseCardStackers.map((Card, index) => (
 						<SkillsProvider key={id}>
 							<Card />
 						</SkillsProvider>

@@ -3,6 +3,7 @@ import TinderCard from "react-tinder-card"
 import styles from "../../styles/mainCard.module.scss"
 
 export default function MainCard() {
+
 	return (
 		<TinderCard className={styles.cardContainer} >
 			<div className={styles.background}>
