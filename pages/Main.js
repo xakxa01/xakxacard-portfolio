@@ -23,32 +23,60 @@ export default function Main() {
 	]
 	const reverseCardStackers = cardStackers.reverse()
 
-	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
+	// 	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
+	// 	const [lastDirection, setLastDirection] = useState()
+	// 	// used for outOfFrame closure
+	// 	const currentIndexRef = useRef(currentIndex)
 
-	// used for outOfFrame closure
-	const currentIndexRef = useRef(currentIndex)
+	// 	const childRefs = useMemo(
+	// 		() =>
+	// 			cardStackers.map(() => createRef()),
+	// 		[]
+	// 	)
 
-	const childRefs = useMemo(() =>
-		cardStackers.map((i) => createRef())
-		, []
-	)
+	// 	const updateCurrentIndex = (val) => {
+	// 		setCurrentIndex(val)
+	// 		currentIndexRef.current = val
+	// 	}
 
-	const updateCurrentIndex = (val) => {
-		setCurrentIndex(val)
-		currentIndexRef.current = val
+	// 	const canGoBack = currentIndex < cardStackers.length - 1
+
+	// 	const canSwipe = currentIndex >= 0
+
+	// 	// set last direction and decrease current index
+	// 	const swiped = (direction, nameToDelete, index) => {
+	// 		setLastDirection(direction)
+	// 		updateCurrentIndex(index - 1)
+	// 	}
+
+	// 	const outOfFrame = (name, idx) => {
+	// 		console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
+	// 		// handle the case in which go back is pressed before card goes outOfFrame
+	// 		currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
+	// 		// TODO: when quickly swipe and restore multiple times the same card,
+	// 		// it happens multiple outOfFrame events are queued and the card disappear
+	// 		// during latest swipes. Only the last outOfFrame event should be considered valid
+	// 	}
+
+	// 	const swipe = async (dir) => {
+	// 		if (canSwipe && currentIndex < cardStackers.length) {
+	// 			await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
+	// 		}
+	// 	}
+
+	// 	// increase current index and show card
+	// 	const goBack = useMemo(async () => {
+	// 		if (!canGoBack && currentIndex < cardStackers.length) return
+	// 		const newIndex = currentIndex + 1
+	// 		updateCurrentIndex(newIndex)
+	// 		await childRefs[currentIndex].current.restoreCard() // Swipe the card!
+	// 	}, []
+	// 	)
+	// }
+
+	const onCardLeftScreen = (myIdentifier) => {
+		console.log(myIdentifier + ' left the screen')
 	}
-
-	const canGoBack = currentIndex < cardStackers.length - 1
-
-	// increase current index and show card
-	const goBack = async () => {
-		if (!canGoBack) return
-		const newIndex = currentIndex + 1
-		updateCurrentIndex(newIndex)
-		await childRefs[newIndex].current.restoreCard()
-		console.log("first")
-	}
-
 
 	return (
 		<>
@@ -59,7 +87,9 @@ export default function Main() {
 				{/* <button onClick={() => goBack()}>hola</button> */}
 				<Redes />
 				<div className={styles.cardContainer}>
-					<BackButton goBack={goBack} />
+					<BackButton
+					// goBack={goBack}
+					/>
 					{reverseCardStackers.map((Card, index) => (
 						<SkillsProvider key={id}>
 							<Card />

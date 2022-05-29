@@ -54,4 +54,5 @@ export default function MainCard() {
 			</div>
 		</TinderCard>
 	)
+
 }
