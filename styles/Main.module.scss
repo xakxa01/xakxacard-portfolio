@@ -7,13 +7,13 @@
     #222831 65.84%,
     #222831 97.37%
   );
-  height: 100vh;
+  height: 90vh;
   width: 100%;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  padding-top: 10%;
 
   .cardContainer {
     width: 350px;

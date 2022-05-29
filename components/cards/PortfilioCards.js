@@ -16,35 +16,37 @@ export default function PortfilioCards() {
 						alt={name}
 					/>
 				</div>
-				<div className={styles.portfolioCardText}>
-					<h3 className={styles.portfolioCardTitle}>
-						{name}
-					</h3>
-					<p className={styles.portfolioCardDescription}>
-						{description}
-					</p>
-				</div>
-				<div className={styles.portfolioCardButtons}>
-					<a
-						className={styles.portfolioCardButtonWatchCode}
-						href={code}
-						target="_blank"
-						rel="noopener noreferrer">
-						<Image
-							src="/assets/icons/github.svg"
-							alt="github icon"
-							width={20}
-							height={20}
-						/>
-						<span className={styles.text}> ver codigo </span>
-					</a>
-					<a
-						className={styles.portfolioCardButtonVisit}
-						href={website}
-						target="_blank"
-						rel="noopener noreferrer">
-						visitar
-					</a>
+				<div className={styles.portfolioInfo}>
+					<div className={styles.portfolioCardText}>
+						<h3 className={styles.portfolioCardTitle}>
+							{name}
+						</h3>
+						<p className={styles.portfolioCardDescription}>
+							{description}
+						</p>
+					</div>
+					<div className={styles.portfolioCardButtons}>
+						<a
+							className={styles.portfolioCardButtonWatchCode}
+							href={code}
+							target="_blank"
+							rel="noopener noreferrer">
+							<Image
+								src="/assets/icons/github.svg"
+								alt="github icon"
+								width={20}
+								height={20}
+							/>
+							<span className={styles.text}> ver codigo </span>
+						</a>
+						<a
+							className={styles.portfolioCardButtonVisit}
+							href={website}
+							target="_blank"
+							rel="noopener noreferrer">
+							visitar
+						</a>
+					</div>
 				</div>
 			</div>
 		</CardTemplate>

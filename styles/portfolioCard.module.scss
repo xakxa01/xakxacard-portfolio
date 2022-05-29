@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 
@@ -34,73 +35,77 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
-    height: 70%;
+    width: 100%;
+    height: 50%;
     background-color: $azul;
-    border-radius: 0px 0px 100px 0px;
-    -webkit-border-radius: 0px 0px 100px 0px;
-    -moz-border-radius: 0px 0px 100px 0px;
-    -ms-border-radius: 0px 0px 100px 0px;
-    -o-border-radius: 0px 0px 100px 0px;
-    z-index: 0;
   }
 
   .portfolioCardImage {
-    margin-top: 5%;
+    margin-block: 5%;
   }
 
-  .portfolioCardText {
-    padding: 20px;
-    z-index: 1;
-
-    .portfolioCardTitle {
-      @include nunitoBlack;
-      text-transform: uppercase;
-      color: $negro;
-      font-size: 1.5em;
-    }
-
-    .portfolioCardDescription {
-      @include breeSerif;
-      color: $negro;
-    }
-  }
-
-  .portfolioCardButtons {
-    // @include solid;
-    width: 100%;
+  .portfolioInfo {
     display: flex;
-    // justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    height: 30%;
+    width: 100%;
+    @include solid;
 
-    .portfolioCardButtonVisit,
-    .portfolioCardButtonWatchCode {
-      @include nunitoBlack;
-      text-decoration: none;
-      text-transform: uppercase;
+    .portfolioCardText {
+      padding-inline: 20px;
+      z-index: 1;
+
+      .portfolioCardTitle {
+        @include nunitoBlack;
+        text-transform: uppercase;
+        color: $negro;
+        font-size: 1.5em;
+      }
+
+      .portfolioCardDescription {
+        @include breeSerif;
+        color: $negro;
+      }
     }
 
-    .portfolioCardButtonVisit {
-      color: $azul;
-      font-size: 1.2em;
-      margin-left: 5%;
-    }
-
-    .portfolioCardButtonWatchCode {
-      color: $blanco;
-      background: $negro2;
-      padding: 10px;
-      font-size: 1.2em;
+    .portfolioCardButtons {
+      width: 100%;
+      height: 100%;
       display: flex;
-      justify-content: center;
-      border-radius: 0px 20px 20px 0px;
-      -webkit-border-radius: 0px 20px 20px 0px;
-      -moz-border-radius: 0px 20px 20px 0px;
-      -ms-border-radius: 0px 20px 20px 0px;
-      -o-border-radius: 0px 20px 20px 0px;
+      align-items: center;
+      margin-left: 15px;
 
-      .text {
-        margin-left: 10px;
+      .portfolioCardButtonVisit,
+      .portfolioCardButtonWatchCode {
+        @include nunitoBlack;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+
+      .portfolioCardButtonVisit {
+        color: $azul;
+        font-size: 1.2em;
+        margin-left: 5%;
+      }
+
+      .portfolioCardButtonWatchCode {
+        color: $blanco;
+        background: $negro2;
+        padding: 10px;
+        font-size: 1.2em;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        -o-border-radius: 10px;
+
+        .text {
+          margin-left: 10px;
+        }
       }
     }
   }

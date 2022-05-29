@@ -1,0 +1,74 @@
+@import "variables";
+
+.contactoContainer {
+  height: 100vh;
+  background: linear-gradient(
+    -303.02deg,
+    #363c45 19.02%,
+    #222831 65.84%,
+    #222831 97.37%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .letter1,
+  .letter2 {
+    @include nunitoBlack;
+    color: $blanco;
+    font-size: 1.5em;
+  }
+
+  .letter2 {
+    color: $azul;
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+  }
+
+  .emailInput,
+  .messageInput {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    border: transparent;
+    padding: 10px;
+    padding-left: 10px;
+    display: block;
+    margin-block: 10px;
+    width: 100%;
+    outline: none;
+    color: $negro3;
+    @include interMedium;
+    font-size: 1.1em;
+
+    &::placeholder {
+      color: $gris;
+    }
+  }
+
+  .btnSubmit {
+    background: $azul;
+    border: none;
+    color: $blanco;
+    padding: 7px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    @include nunitoBlack;
+    width: 100%;
+    cursor: pointer;
+    margin: 5px;
+    font-size: 1.3em;
+  }
+}
