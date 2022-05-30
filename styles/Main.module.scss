@@ -4,54 +4,58 @@
   @include cardTemplate;
 }
 
-.mainContainer {
+.container {
   background: linear-gradient(
     112.73deg,
     #363c45 19.02%,
     #222831 65.84%,
     #222831 97.37%
   );
-  height: 90vh;
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 10%;
 
-  .cardContainer {
-    width: 350px;
-    height: 70vh;
+  .mainContainer {
+    height: 90vh;
+    width: 100%;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-    background: #222831;
-    z-index: 10;
+    padding-top: 10%;
 
-    &::before {
-      content: "";
-      position: absolute;
-      background: url(/assets/svg/black.svg) no-repeat center center;
-      height: 100%;
-      width: 100%;
-    }
+    .cardContainer {
+      width: 350px;
+      height: 70vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      border-radius: 20px;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      -ms-border-radius: 20px;
+      -o-border-radius: 20px;
+      background: #222831;
+      z-index: 10;
 
-    &::after {
-      content: "";
-      background: url(/assets/icons/bxs-down-arrow.svg) no-repeat center bottom;
-      position: absolute;
-      height: 90%;
-      width: 100%;
-      z-index: -1;
-      animation: down-arrow-animation 0.5s ease-in-out infinite;
-      -webkit-animation: down-arrow-animation 0.5s ease-in-out infinite;
-      animation-direction: alternate;
+      &::before {
+        content: "";
+        position: absolute;
+        background: url(/assets/svg/black.svg) no-repeat center center;
+        height: 100%;
+        width: 100%;
+      }
+
+      &::after {
+        content: "";
+        background: url(/assets/icons/bxs-down-arrow.svg) no-repeat center
+          bottom;
+        position: absolute;
+        height: 90%;
+        width: 100%;
+        z-index: -1;
+        animation: down-arrow-animation 0.5s ease-in-out infinite;
+        -webkit-animation: down-arrow-animation 0.5s ease-in-out infinite;
+        animation-direction: alternate;
+      }
     }
   }
 }
@@ -70,5 +74,66 @@
     -moz-transform: translateY(5%);
     -ms-transform: translateY(5%);
     -o-transform: translateY(5%);
+  }
+}
+
+@media (min-width: 768px) {
+  @keyframes left-arrow-animation {
+    0% {
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+      -o-transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-5%);
+      -webkit-transform: translateX(-5%);
+      -moz-transform: translateX(-5%);
+      -ms-transform: translateX(-5%);
+      -o-transform: translateX(-5%);
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: url(/assets/svg/bigLogo.svg) no-repeat left center;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background: url("/assets/svg/blob decoration.svg") no-repeat right top;
+      height: 100%;
+      width: 100%;
+      z-index: 0;
+    }
+
+    .mainContainer {
+      width: 40%;
+      padding-top: 0;
+      order: 2;
+      justify-content: center;
+      overflow: visible;
+
+      .cardContainer {
+        &::after {
+          animation: left-arrow-animation 0.5s ease-in-out infinite;
+          -webkit-animation: left-arrow-animation 0.5s ease-in-out infinite;
+          animation-direction: alternate;
+          background: url(/assets/icons/arrow-left.svg) no-repeat center bottom;
+        }
+      }
+    }
   }
 }

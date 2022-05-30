@@ -2,11 +2,11 @@
 
 .contactoContainer {
   height: 100vh;
-  background: $negro;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 10;
 
   .letter1,
   .letter2 {
@@ -65,5 +65,14 @@
     cursor: pointer;
     margin: 5px;
     font-size: 1.3em;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactoContainer {
+    width: 60%;
+    .form {
+      width: 30%;
+    }
   }
 }

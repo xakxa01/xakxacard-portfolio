@@ -77,7 +77,7 @@ export default function Main() {
 	}
 
 	return (
-		<>
+		<div className={styles.container}>
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
@@ -100,7 +100,7 @@ export default function Main() {
 			</div>
 
 			<Contacto />
-		</>
+		</div>
 	)
 
 }
