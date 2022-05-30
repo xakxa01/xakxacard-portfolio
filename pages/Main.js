@@ -1,6 +1,5 @@
 import { createRef, useId, useMemo, useRef, useState } from "react"
 import BackButton from "../components/BackButton"
-import HabilidadesCard from "../components/cards/HabilidadesCards"
 import HabilidadesTitleCard from "../components/cards/HabilidadesTitleCard"
 import MainCard from "../components/cards/MainCard"
 import PortfilioCards from "../components/cards/PortfilioCards"
@@ -10,72 +9,61 @@ import Redes from "../components/Redes"
 import { SkillsProvider } from "../context/SkillsContext"
 import styles from "../styles/Main.module.scss"
 import { GoogleFonts } from "next-google-fonts";
+import CardTemplate from "../components/CardTemplate"
+import HabilidadesCard1 from "../components/cards/HabilidadesCard1"
+import HabilidadesCard2 from "../components/cards/HabilidadesCard2"
 
 export default function Main() {
 
 	const id = useId()
+
 	const cardStackers = [
 		MainCard,
 		HabilidadesTitleCard,
-		HabilidadesCard,
+		HabilidadesCard1,
+		HabilidadesCard2,
 		PortfolioTitle,
 		PortfilioCards,
-	]
-	const reverseCardStackers = cardStackers.reverse()
+	].reverse();
 
-	// 	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
-	// 	const [lastDirection, setLastDirection] = useState()
-	// 	// used for outOfFrame closure
-	// 	const currentIndexRef = useRef(currentIndex)
+	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
 
-	// 	const childRefs = useMemo(
-	// 		() =>
-	// 			cardStackers.map(() => createRef()),
-	// 		[]
-	// 	)
+	const currentIndexRef = useRef(currentIndex)
 
-	// 	const updateCurrentIndex = (val) => {
-	// 		setCurrentIndex(val)
-	// 		currentIndexRef.current = val
-	// 	}
+	const childRefs = useMemo(
+		() =>
+			cardStackers.map(() => createRef()),
+		[]
+	)
 
-	// 	const canGoBack = currentIndex < cardStackers.length - 1
+	const updateCurrentIndex = (val) => {
+		setCurrentIndex(val)
+		currentIndexRef.current = val
+	}
 
-	// 	const canSwipe = currentIndex >= 0
+	const canGoBack = currentIndex < cardStackers.length - 1
 
-	// 	// set last direction and decrease current index
-	// 	const swiped = (direction, nameToDelete, index) => {
-	// 		setLastDirection(direction)
-	// 		updateCurrentIndex(index - 1)
-	// 	}
+	const swiped = (index) => {
+		updateCurrentIndex(index - 1)
+	}
 
-	// 	const outOfFrame = (name, idx) => {
-	// 		console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
-	// 		// handle the case in which go back is pressed before card goes outOfFrame
-	// 		currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
-	// 		// TODO: when quickly swipe and restore multiple times the same card,
-	// 		// it happens multiple outOfFrame events are queued and the card disappear
-	// 		// during latest swipes. Only the last outOfFrame event should be considered valid
-	// 	}
+	const outOfFrame = (idx) => {
+		currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
+	}
 
-	// 	const swipe = async (dir) => {
-	// 		if (canSwipe && currentIndex < cardStackers.length) {
-	// 			await childRefs[currentIndex].current.swipe(dir) // Swipe the card!
-	// 		}
-	// 	}
+	const goBack = async () => {
+		if (!canGoBack) return
+		const newIndex = currentIndex + 1
+		updateCurrentIndex(newIndex)
+		await childRefs[newIndex].current.restoreCard()
+	}
 
-	// 	// increase current index and show card
-	// 	const goBack = useMemo(async () => {
-	// 		if (!canGoBack && currentIndex < cardStackers.length) return
-	// 		const newIndex = currentIndex + 1
-	// 		updateCurrentIndex(newIndex)
-	// 		await childRefs[currentIndex].current.restoreCard() // Swipe the card!
-	// 	}, []
-	// 	)
-	// }
-
-	const onCardLeftScreen = (myIdentifier) => {
-		console.log(myIdentifier + ' left the screen')
+	const configCard = (index) => {
+		return {
+			ref: childRefs[index],
+			onSwipe: () => swiped(index),
+			onCardLeftScreen: () => outOfFrame(index),
+		}
 	}
 
 	return (
@@ -83,16 +71,19 @@ export default function Main() {
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
 			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
+
 			<div className={styles.mainContainer}>
-				{/* <button onClick={() => goBack()}>hola</button> */}
 				<Redes />
 				<div className={styles.cardContainer}>
-					<BackButton
-					// goBack={goBack}
-					/>
-					{reverseCardStackers.map((Card, index) => (
+					<BackButton goBack={goBack} />
+					{cardStackers.map((Card, index) => (
 						<SkillsProvider key={id}>
-							<Card />
+							<CardTemplate
+								className={styles.cardTemplateContainer}
+								props={configCard(index)}
+							>
+								<Card />
+							</CardTemplate>
 						</SkillsProvider>
 					))}
 				</div>
@@ -101,4 +92,6 @@ export default function Main() {
 			<Contacto />
 		</>
 	)
+
 }
+

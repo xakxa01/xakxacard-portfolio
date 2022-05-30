@@ -1,16 +1,12 @@
 import TinderCard from 'react-tinder-card'
-import styles from "../styles/cardTemplate.module.scss"
+import styles from "../styles/Main.module.scss"
 
-export default function CardTemplate({ children }) {
-
-	const onCardLeftScreen = (myIdentifier) => {
-		console.log(myIdentifier + ' left the screen')
-	}
+export default function CardTemplate({ children, props }) {
 
 	return (
 		<TinderCard
 			className={styles.cardTemplateContainer}
-			onCardLeftScreen={() => onCardLeftScreen("main")}
+			{...props}
 		>
 			{children}
 		</TinderCard>

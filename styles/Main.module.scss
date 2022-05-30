@@ -1,5 +1,9 @@
 @import "variables";
 
+.cardTemplateContainer {
+  @include cardTemplate;
+}
+
 .mainContainer {
   background: linear-gradient(
     112.73deg,
