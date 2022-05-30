@@ -62,31 +62,28 @@
         color: $negro;
         font-size: 1.5em;
       }
-
-      .portfolioCardDescription {
-        @include breeSerif;
-        color: $negro;
-      }
     }
 
     .portfolioCardButtons {
       width: 100%;
       height: 100%;
       display: flex;
+      // flex-direction: column;
       align-items: center;
-      margin-left: 15px;
+      justify-content: center;
 
       .portfolioCardButtonVisit,
       .portfolioCardButtonWatchCode {
         @include nunitoBlack;
         text-decoration: none;
         text-transform: uppercase;
+        margin-block: 10px;
+        margin-inline: 10px;
       }
 
       .portfolioCardButtonVisit {
         color: $azul;
         font-size: 1.2em;
-        margin-left: 5%;
       }
 
       .portfolioCardButtonWatchCode {

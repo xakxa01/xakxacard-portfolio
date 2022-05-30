@@ -1,7 +1,7 @@
 import React from 'react'
-const skillsContext = React.createContext()
+const InfoContext = React.createContext()
 
-function SkillsProvider({ children }) {
+function InfoProvider({ children }) {
 	const iconArray = [
 		{
 			img: "https://img.icons8.com/ios-glyphs/88/0099ff/html-5.png",
@@ -70,8 +70,8 @@ function SkillsProvider({ children }) {
 		}
 	]
 
-	return <skillsContext.Provider value={{ iconArray }}> {children} </skillsContext.Provider>
+	return <InfoContext.Provider value={{ iconArray }}> {children} </InfoContext.Provider>
 }
 
-export { SkillsProvider }
-export default skillsContext;
+export { InfoProvider }
+export default InfoContext;

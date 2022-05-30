@@ -1,4 +1,4 @@
-import styles from '../../styles/portfolioCard.module.scss'
+import styles from '../../../styles/portfolioCard.module.scss'
 
 export default function PortfolioTitle() {
 	return (

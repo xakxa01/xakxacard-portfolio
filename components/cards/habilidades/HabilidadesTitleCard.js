@@ -1,4 +1,4 @@
-import styles from "../../styles/habilidadesCard.module.scss"
+import styles from "../../../styles/habilidadesCard.module.scss"
 
 export default function HabilidadesTitleCard() {
 
