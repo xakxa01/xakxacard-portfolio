@@ -15,8 +15,8 @@ export default function Contacto() {
 			</h1>
 			<Formik
 				initialValues={initialValues}
-				onSubmit={(values, { resetForm }) => {
-					emailJS.send(
+				onSubmit={async (values, { resetForm }) => {
+					await emailJS.send(
 						process.env.NEXT_PUBLIC_SERVICE_ID,
 						process.env.NEXT_PUBLIC_TEMPLATE_ID,
 						values,

@@ -5,9 +5,7 @@ export default function CardTemplate({ children, props, swiped }) {
 
 	const nameComponent = children.type.name;
 
-	const open = (url) =>
-		typeof window === 'object'
-		&& window.open(url, '_blank')
+	const open = async (url) => await window.open(url, '_blank')
 
 	const gesture = (nameCondition, visit, watchcode, direction) => {
 		if (nameComponent === nameCondition) {
