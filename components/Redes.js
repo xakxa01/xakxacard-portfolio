@@ -1,9 +1,7 @@
 import Image from 'next/image'
-import { useId } from 'react';
 import styles from "../styles/redes.module.scss"
 
 export default function Redes() {
-	const id = useId()
 	/* It's creating an array with the objects created with the class redesTemplate. */
 	const redesArray = [
 		{
@@ -29,7 +27,7 @@ export default function Redes() {
 	return (
 		<aside className={styles.redes__container} data-aos="fade-right">
 			{redesArray.map(redes => (
-				<div key={id}>
+				<div key={redes.title}>
 					<a
 						className={styles.redes__link}
 						href={redes.link}

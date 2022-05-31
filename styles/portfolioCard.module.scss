@@ -54,7 +54,6 @@
 
     .portfolioCardText {
       padding-inline: 20px;
-      z-index: 1;
 
       .portfolioCardTitle {
         @include nunitoBlack;
@@ -68,39 +67,22 @@
       width: 100%;
       height: 100%;
       display: flex;
-      // flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      .portfolioCardButtonVisit,
-      .portfolioCardButtonWatchCode {
+      .gestureButton {
         @include nunitoBlack;
         text-decoration: none;
         text-transform: uppercase;
-        margin-block: 10px;
-        margin-inline: 10px;
-      }
-
-      .portfolioCardButtonVisit {
-        color: $azul;
         font-size: 1.2em;
-      }
-
-      .portfolioCardButtonWatchCode {
-        color: $blanco;
-        background: $negro2;
-        padding: 10px;
-        font-size: 1.2em;
+        color: $negro3;
         display: flex;
         justify-content: center;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        -ms-border-radius: 10px;
-        -o-border-radius: 10px;
+        align-items: center;
+        margin-inline: 8px;
 
         .text {
-          margin-left: 10px;
+          margin-inline: 3px;
         }
       }
     }

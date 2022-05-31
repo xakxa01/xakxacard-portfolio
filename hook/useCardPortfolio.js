@@ -18,27 +18,33 @@ const useCardPortfolio = (name, image, code, website) => (
 				</h3>
 			</div>
 			<div className={styles.portfolioCardButtons}>
-				<a
-					className={styles.portfolioCardButtonVisit}
+				<div
+					className={styles.gestureButton}
 					href={website}
 					target="_blank"
 					rel="noopener noreferrer">
-					visitar
-				</a>
-
-				<a
-					className={styles.portfolioCardButtonWatchCode}
-					href={code}
-					target="_blank"
-					rel="noopener noreferrer">
 					<Image
-						src="/assets/icons/github.svg"
+						src="/assets/icons/arrow-left.svg"
 						alt="github icon"
 						width={20}
 						height={20}
 					/>
 					<span className={styles.text}> ver codigo </span>
-				</a>
+				</div>
+
+				<div
+					className={styles.gestureButton}
+					href={code}
+					target="_blank"
+					rel="noopener noreferrer">
+					<span className={styles.text}>visitar</span>
+					<Image
+						src="/assets/icons/arrow-right.svg"
+						alt="github icon"
+						width={20}
+						height={20}
+					/>
+				</div>
 			</div>
 		</div>
 	</div>

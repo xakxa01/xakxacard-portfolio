@@ -1,10 +1,7 @@
 import Image from 'next/image'
-import { useId } from 'react'
 import styles from '../styles/habilidadesCard.module.scss'
 
 export default function useCardHabilidades(array, size) {
-
-	const id = useId()
 
 	return (
 		<div className={styles.habilidadesCards}>
@@ -12,7 +9,7 @@ export default function useCardHabilidades(array, size) {
 				{array.map(icon => (
 					<a
 						href={icon.link}
-						key={id}
+						key={icon.name}
 						className={styles.imgIcon}
 						data-aos="fade-up"
 						target="_blank"

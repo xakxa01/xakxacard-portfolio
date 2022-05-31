@@ -1,7 +1,8 @@
-import { createRef, useId, useMemo, useRef, useState } from "react"
+import { createRef, useMemo, useRef, useState } from "react"
 import { InfoProvider } from "../context/InfoContext"
 import styles from "../styles/Main.module.scss"
 import { GoogleFonts } from "next-google-fonts";
+import Head from "next/head"
 
 // header
 import MainCard from "../components/cards/MainCard"
@@ -23,8 +24,6 @@ import BackButton from "../components/BackButton"
 import CardTemplate from "../components/CardTemplate"
 
 export default function Main() {
-
-	const id = useId()
 
 	const cardStackers = [
 		MainCard,
@@ -53,13 +52,10 @@ export default function Main() {
 
 	const canGoBack = currentIndex < cardStackers.length - 1
 
-	const swiped = (index) => {
-		updateCurrentIndex(index - 1)
-	}
+	const outOfFrame = (idx) =>
+		currentIndexRef.current >= idx
+		&& childRefs[idx].current.restoreCard()
 
-	const outOfFrame = (idx) => {
-		currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
-	}
 
 	const goBack = async () => {
 		if (!canGoBack) return
@@ -68,39 +64,51 @@ export default function Main() {
 		await childRefs[newIndex].current.restoreCard()
 	}
 
+
+	const swiped = (index) => {
+		updateCurrentIndex(index - 1)
+	}
+
 	const configCard = (index) => {
 		return {
 			ref: childRefs[index],
-			onSwipe: () => swiped(index),
+			// onSwipe: () => swiped(index),
 			onCardLeftScreen: () => outOfFrame(index),
 		}
 	}
 
 	return (
-		<div className={styles.container}>
-			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
-			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
-			<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
+		<>
+			<Head>
+				<title>xakxa</title>
+			</Head>
 
-			<div className={styles.mainContainer}>
-				<Redes />
-				<div className={styles.cardContainer}>
-					<BackButton goBack={goBack} />
-					{cardStackers.map((Card, index) => (
-						<InfoProvider key={id}>
-							<CardTemplate
-								className={styles.cardTemplateContainer}
-								props={configCard(index)}
-							>
-								<Card />
-							</CardTemplate>
-						</InfoProvider>
-					))}
+			<div className={styles.container}>
+				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
+				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
+				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
+
+				<div className={styles.mainContainer}>
+					<Redes />
+					<div className={styles.cardContainer}>
+						<BackButton goBack={goBack} />
+						{cardStackers.map((Card, index) => (
+							<InfoProvider key={index}>
+								<CardTemplate
+									className={styles.cardTemplateContainer}
+									props={configCard(index)}
+									swiped={() => swiped(index)}
+								>
+									<Card />
+								</CardTemplate>
+							</InfoProvider>
+						))}
+					</div>
 				</div>
-			</div>
 
-			<Contacto />
-		</div>
+				<Contacto />
+			</div>
+		</>
 	)
 
 }
