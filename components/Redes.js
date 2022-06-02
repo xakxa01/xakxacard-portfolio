@@ -2,7 +2,6 @@ import Image from 'next/image'
 import styles from "../styles/redes.module.scss"
 
 export default function Redes() {
-	/* It's creating an array with the objects created with the class redesTemplate. */
 	const redesArray = [
 		{
 			socialMedia: "instagram",

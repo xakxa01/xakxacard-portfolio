@@ -4,20 +4,16 @@ import styles from "../styles/Main.module.scss"
 import { GoogleFonts } from "next-google-fonts";
 import Head from "next/head"
 
-// header
 import MainCard from "../components/cards/MainCard"
 
-// portafolio
-import MelaniCard from "../components/cards/portafolio/MelaniCard";
 import PortfolioTitle from "../components/cards/portafolio/PortfolioTitle"
 import AnteriorPortafolio from "../components/cards/portafolio/AnteriorPortafolio";
+import MelaniCard from "../components/cards/portafolio/MelaniCard";
 
-// habilidades
+import HabilidadesTitleCard from "../components/cards/habilidades/HabilidadesTitleCard"
 import HabilidadesCard1 from "../components/cards/habilidades/HabilidadesCard1"
 import HabilidadesCard2 from "../components/cards/habilidades/HabilidadesCard2"
-import HabilidadesTitleCard from "../components/cards/habilidades/HabilidadesTitleCard"
 
-// otros
 import Contacto from "../components/Contacto"
 import Redes from "../components/Redes"
 import BackButton from "../components/BackButton"
@@ -39,24 +35,40 @@ export default function Main() {
 
 	const currentIndexRef = useRef(currentIndex)
 
+	/* Creating an array of refs. */
 	const childRefs = useMemo(
 		() =>
 			cardStackers.map(() => createRef()),
 		[cardStackers]
 	)
 
+	/**
+	 * It updates the currentIndex state and the currentIndexRef.current value.
+	 * @param val - the value to set the currentIndex to
+	 */
 	const updateCurrentIndex = (val) => {
 		setCurrentIndex(val)
 		currentIndexRef.current = val
 	}
 
+	/* Checking if the current index is less than the length of the cardStackers array. */
 	const canGoBack = currentIndex < cardStackers.length - 1
 
+	/**
+	 * If the current index is greater than the index of the card, and the card is not in the frame, then
+	 * restore the card.
+	 * @param idx - The index of the child component
+	 */
 	const outOfFrame = (idx) =>
 		currentIndexRef.current >= idx
 		&& childRefs[idx].current.restoreCard()
 
 
+	/**
+	 * If we can't go back, return. Otherwise, update the current index and restore the card.
+	 * @returns The return value of the function is the return value of the last statement in the
+	 * function.
+	 */
 	const goBack = async () => {
 		if (!canGoBack) return
 		const newIndex = currentIndex + 1
@@ -65,14 +77,22 @@ export default function Main() {
 	}
 
 
+	/**
+	 * When the user swipes, update the current index to the index of the swiped item minus one.
+	 * @param index - The index of the current slide.
+	 */
 	const swiped = (index) => {
 		updateCurrentIndex(index - 1)
 	}
 
+	/**
+	 * If the card is out of frame, then call the outOfFrame function with the index of the card.
+	 * @param index - The index of the card in the stack.
+	 * @returns An object with two properties.
+	 */
 	const configCard = (index) => {
 		return {
 			ref: childRefs[index],
-			// onSwipe: () => swiped(index),
 			onCardLeftScreen: () => outOfFrame(index),
 		}
 	}
