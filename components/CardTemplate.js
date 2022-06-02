@@ -25,10 +25,9 @@ export default function CardTemplate({ children, props, swiped }) {
 	 */
 	const gesture = (nameCondition, otherNameCondition, visit, watchcode, direction) => {
 		if (nameComponent === nameCondition || nameComponent === otherNameCondition)
-			if (direction === 'right') open(visit)
-			else if (direction === 'left') open(watchcode)
+			if (direction === 'down') open(visit)
+			else if (direction === 'up') open(watchcode)
 	}
-
 
 	/**
 	 * It's a function that takes a direction as an argument and then calls another function called
@@ -69,6 +68,7 @@ export default function CardTemplate({ children, props, swiped }) {
 		)
 
 		swiped()
+
 	};
 
 	return (

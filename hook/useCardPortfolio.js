@@ -23,12 +23,14 @@ const useCardPortfolio = (name, image, code, website) => (
 					href={website}
 					target="_blank"
 					rel="noopener noreferrer">
-					<Image
-						src="/assets/icons/arrow-left.svg"
-						alt="github icon"
-						width={20}
-						height={20}
-					/>
+					<div className={styles.arrow}>
+						<Image
+							src="/assets/icons/arrow-left.svg"
+							alt="github icon"
+							width={20}
+							height={20}
+						/>
+					</div>
 					<span className={styles.text}> ver codigo </span>
 				</a>
 
@@ -38,12 +40,14 @@ const useCardPortfolio = (name, image, code, website) => (
 					target="_blank"
 					rel="noopener noreferrer">
 					<span className={styles.text}>visitar</span>
-					<Image
-						src="/assets/icons/arrow-right.svg"
-						alt="github icon"
-						width={20}
-						height={20}
-					/>
+					<div className={styles.arrow}>
+						<Image
+							src="/assets/icons/arrow-right.svg"
+							alt="github icon"
+							width={20}
+							height={20}
+						/>
+					</div>
 				</a>
 			</div>
 		</div>

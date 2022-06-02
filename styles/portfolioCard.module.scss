@@ -67,6 +67,7 @@
       width: 100%;
       height: 100%;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
@@ -77,12 +78,21 @@
         font-size: 1.2em;
         color: $negro3;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-inline: 8px;
+        margin-block: 8px;
 
         .text {
           margin-inline: 3px;
+        }
+
+        .arrow {
+          transform: rotate(90deg);
+          -webkit-transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+          -o-transform: rotate(90deg);
         }
       }
     }
