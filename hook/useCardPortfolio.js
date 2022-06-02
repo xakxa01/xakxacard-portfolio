@@ -18,7 +18,7 @@ const useCardPortfolio = (name, image, code, website) => (
 				</h3>
 			</div>
 			<div className={styles.portfolioCardButtons}>
-				<div
+				<a
 					className={styles.gestureButton}
 					href={website}
 					target="_blank"
@@ -30,9 +30,9 @@ const useCardPortfolio = (name, image, code, website) => (
 						height={20}
 					/>
 					<span className={styles.text}> ver codigo </span>
-				</div>
+				</a>
 
-				<div
+				<a
 					className={styles.gestureButton}
 					href={code}
 					target="_blank"
@@ -44,7 +44,7 @@ const useCardPortfolio = (name, image, code, website) => (
 						width={20}
 						height={20}
 					/>
-				</div>
+				</a>
 			</div>
 		</div>
 	</div>

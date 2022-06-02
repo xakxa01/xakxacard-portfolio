@@ -7,8 +7,8 @@ export default function CardTemplate({ children, props, swiped }) {
 
 	const open = async (url) => await window.open(url, '_blank')
 
-	const gesture = (nameCondition, visit, watchcode, direction) => {
-		if (nameComponent === nameCondition) {
+	const gesture = (nameCondition, otherNameCondition, visit, watchcode, direction) => {
+		if (nameComponent === nameCondition || nameComponent === otherNameCondition) {
 			if (direction === 'right') {
 				open(visit)
 			} else if (direction === 'left') {
@@ -17,11 +17,12 @@ export default function CardTemplate({ children, props, swiped }) {
 		}
 	}
 
+
 	const onSwipe = (direction) => {
-		swiped()
 
 		gesture(
 			'AnteriorPortafolio',
+			'L',
 			'https://anteriorportafolio.vercel.app/',
 			'https://github.com/xakxa01/portafolio',
 			direction
@@ -29,10 +30,13 @@ export default function CardTemplate({ children, props, swiped }) {
 
 		gesture(
 			'MelaniCard',
+			'N',
 			'https://portafolio-de-disenadora.vercel.app/',
 			'https://github.com/xakxa01/portafolio-de-disenadora',
 			direction
 		)
+
+		swiped()
 	};
 
 	return (
@@ -44,4 +48,5 @@ export default function CardTemplate({ children, props, swiped }) {
 			{children}
 		</TinderCard>
 	)
+
 }
