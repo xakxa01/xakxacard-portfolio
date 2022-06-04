@@ -103,30 +103,32 @@ export default function Main() {
 				<title>xakxa</title>
 			</Head>
 
-			<div className={styles.container}>
+			<div className={styles.background}>
 				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" />
 				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" />
 				<GoogleFonts href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;900&display=swap" />
 
-				<div className={styles.mainContainer}>
-					<Redes />
-					<div className={styles.cardContainer}>
-						<BackButton goBack={goBack} />
-						{cardStackers.map((Card, index) => (
-							<InfoProvider key={index}>
-								<CardTemplate
-									className={styles.cardTemplateContainer}
-									props={configCard(index)}
-									swiped={() => swiped(index)}
-								>
-									<Card />
-								</CardTemplate>
-							</InfoProvider>
-						))}
+				<div className={styles.container}>
+					<div className={styles.mainContainer}>
+						<Redes />
+						<div className={styles.cardContainer}>
+							<BackButton goBack={goBack} />
+							{cardStackers.map((Card, index) => (
+								<InfoProvider key={index}>
+									<CardTemplate
+										className={styles.cardTemplateContainer}
+										props={configCard(index)}
+										swiped={() => swiped(index)}
+									>
+										<Card />
+									</CardTemplate>
+								</InfoProvider>
+							))}
+						</div>
 					</div>
-				</div>
 
-				<Contacto />
+					<Contacto />
+				</div>
 			</div>
 		</>
 	)
