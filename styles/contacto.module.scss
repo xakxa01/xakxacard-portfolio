@@ -39,10 +39,10 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     border: transparent;
-    padding: 10px;
-    padding-left: 10px;
+    padding: 0.625rem;
+    padding-left: 0.625rem;
     display: block;
-    margin-block: 10px;
+    margin-block: 0.625rem;
     width: 100%;
     outline: none;
     color: $negro3;
@@ -58,7 +58,7 @@
     background: $azul;
     border: none;
     color: $blanco;
-    padding: 7px;
+    padding: 0.438rem;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -67,7 +67,7 @@
     @include nunitoBlack;
     width: 100%;
     cursor: pointer;
-    margin: 5px;
+    margin: 0.313rem;
     font-size: 1.3em;
   }
 }

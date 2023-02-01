@@ -4,7 +4,7 @@ export default function HabilidadesTitleCard() {
 
 	return (
 		<div className={styles.titleContainer}>
-			<h1 className={styles.title}>HABILIDADE</h1>
+			<h1 className={styles.title}>SKILL</h1>
 		</div>
 	)
 }

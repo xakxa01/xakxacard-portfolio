@@ -1,14 +1,8 @@
 @import "variables";
 
 .cardContainer {
-  width: 100%;
-  height: 70vh;
+  @include cardTemplate;
   background: $negro3;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
 
   .background {
     width: 100%;
@@ -24,7 +18,7 @@
       justify-content: center;
       align-items: center;
       background: linear-gradient(132.26deg, #0099ff 40%, #08d9d6 75%);
-      margin-top: -10px;
+      margin-top: -0.625rem;
 
       .logo {
         height: 100%;
@@ -42,7 +36,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 10px;
+        margin: 0.625rem;
         height: 100%;
 
         &::after {

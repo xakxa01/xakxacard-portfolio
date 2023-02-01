@@ -3,21 +3,16 @@ import { InfoProvider } from "../context/InfoContext"
 import styles from "../styles/Main.module.scss"
 import { GoogleFonts } from "next-google-fonts";
 import Head from "next/head"
-
 import MainCard from "../components/cards/MainCard"
-
 import PortfolioTitle from "../components/cards/portafolio/PortfolioTitle"
-import AnteriorPortafolio from "../components/cards/portafolio/AnteriorPortafolio";
-import MelaniCard from "../components/cards/portafolio/MelaniCard";
-
 import HabilidadesTitleCard from "../components/cards/habilidades/HabilidadesTitleCard"
 import HabilidadesCard1 from "../components/cards/habilidades/HabilidadesCard1"
 import HabilidadesCard2 from "../components/cards/habilidades/HabilidadesCard2"
-
 import Contacto from "../components/Contacto"
 import Redes from "../components/Redes"
 import BackButton from "../components/BackButton"
 import CardTemplate from "../components/CardTemplate"
+import Helpmyteam from "../components/cards/portafolio/Helpmyteam";
 
 export default function Main() {
 
@@ -27,8 +22,7 @@ export default function Main() {
 		HabilidadesCard1,
 		HabilidadesCard2,
 		PortfolioTitle,
-		AnteriorPortafolio,
-		MelaniCard,
+		Helpmyteam,
 	].reverse();
 
 	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
@@ -36,11 +30,7 @@ export default function Main() {
 	const currentIndexRef = useRef(currentIndex)
 
 	/* Creating an array of refs. */
-	const childRefs = useMemo(
-		() =>
-			cardStackers.map(() => createRef()),
-		[cardStackers]
-	)
+	const childRefs = useMemo(() => cardStackers.map(() => createRef()), [cardStackers])
 
 	/**
 	 * It updates the currentIndex state and the currentIndexRef.current value.
@@ -59,10 +49,10 @@ export default function Main() {
 	 * restore the card.
 	 * @param idx - The index of the child component
 	 */
-	const outOfFrame = (idx) =>
+	const outOfFrame = (idx) => (
 		currentIndexRef.current >= idx
 		&& childRefs[idx].current.restoreCard()
-
+	)
 
 	/**
 	 * If we can't go back, return. Otherwise, update the current index and restore the card.
@@ -81,21 +71,17 @@ export default function Main() {
 	 * When the user swipes, update the current index to the index of the swiped item minus one.
 	 * @param index - The index of the current slide.
 	 */
-	const swiped = (index) => {
-		updateCurrentIndex(index - 1)
-	}
+	const swiped = (index) => updateCurrentIndex(index - 1)
 
 	/**
 	 * If the card is out of frame, then call the outOfFrame function with the index of the card.
 	 * @param index - The index of the card in the stack.
 	 * @returns An object with two properties.
 	 */
-	const configCard = (index) => {
-		return {
-			ref: childRefs[index],
-			onCardLeftScreen: () => outOfFrame(index),
-		}
-	}
+	const configCard = (index) => ({
+		ref: childRefs[index],
+		onCardLeftScreen: () => outOfFrame(index),
+	})
 
 	return (
 		<>

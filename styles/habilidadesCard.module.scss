@@ -13,7 +13,7 @@
     -moz-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
-    margin-right: 2.5em;
+    margin-right: 4.2em;
 
     &::after {
       content: "S";
@@ -40,7 +40,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 10px;
+    margin: 0.625rem;
     transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -moz-transform: rotate(180deg);
@@ -65,7 +65,7 @@
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 1.875rem;
 
     .imgIcon {
       width: 100%;

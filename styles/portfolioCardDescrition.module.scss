@@ -2,7 +2,6 @@
 
 .portfolioTitle {
   @include cardTitleTemplate;
-  justify-content: center;
 
   .title {
     position: absolute;
@@ -30,8 +29,6 @@
   background: white;
 
   .portfolioCardImage {
-    // margin-block: 5%;
-    // left: 0;
     width: 100%;
     height: 50%;
   }
@@ -41,8 +38,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 30%;
+    height: 100%;
     width: 100%;
+
+    .description {
+      @include interMedium;
+      margin-inline: 0.5rem;
+      text-align: center;
+    }
 
     .portfolioCardText {
       padding-inline: 1.25rem;
@@ -73,10 +76,10 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-block: 8px;
+        margin-top: 0.5rem;
 
         .text {
-          margin-inline: 3px;
+          margin-inline: 0.19rem;
         }
 
         .arrow {
