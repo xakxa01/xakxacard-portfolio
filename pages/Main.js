@@ -4,7 +4,7 @@ import styles from "../styles/Main.module.scss"
 import { GoogleFonts } from "next-google-fonts";
 import Head from "next/head"
 import MainCard from "../components/cards/MainCard"
-import PortfolioTitle from "../components/cards/portafolio/PortfolioTitle"
+import ExperienceTitle from "../components/cards/experience/ExperienceTitle"
 import HabilidadesTitleCard from "../components/cards/habilidades/HabilidadesTitleCard"
 import HabilidadesCard1 from "../components/cards/habilidades/HabilidadesCard1"
 import HabilidadesCard2 from "../components/cards/habilidades/HabilidadesCard2"
@@ -12,7 +12,7 @@ import Contacto from "../components/Contacto"
 import Redes from "../components/Redes"
 import BackButton from "../components/BackButton"
 import CardTemplate from "../components/CardTemplate"
-import Helpmyteam from "../components/cards/portafolio/Helpmyteam";
+import Helpmyteam from "../components/cards/experience/Helpmyteam";
 import PerfilCard from "../components/cards/PerfilCard";
 
 export default function Main() {
@@ -23,7 +23,7 @@ export default function Main() {
 		HabilidadesTitleCard,
 		HabilidadesCard1,
 		HabilidadesCard2,
-		PortfolioTitle,
+		ExperienceTitle,
 		Helpmyteam,
 	].reverse();
 
