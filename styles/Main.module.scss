@@ -103,12 +103,13 @@
   }
 
   .background {
+    overflow: hidden;
+    
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 80vw;
-      overflow: hidden;
 
       &::before {
         content: "";

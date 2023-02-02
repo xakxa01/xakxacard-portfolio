@@ -10,7 +10,9 @@ export default function CardTemplate({ children, props, swiped }) {
 	 * Open a new tab with the given URL.
 	 * @param url - The URL to open in a new tab.
 	 */
-	const open = (url) => window.open(url, '_blank')
+	const open = (url) => setTimeout(() => {
+		window.open(url, '_blank')
+	}, 1000)
 
 	/**
 	 * It's a function that takes a direction as an argument and then it maps through an array of objects
