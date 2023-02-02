@@ -2,7 +2,7 @@
 
 .cardTemplateContainer {
   @include cardTemplate;
-background: $negro3;
+  background: $negro3;
 }
 
 .background {
@@ -108,6 +108,7 @@ background: $negro3;
       align-items: center;
       justify-content: center;
       width: 80vw;
+      overflow: hidden;
 
       &::before {
         content: "";
