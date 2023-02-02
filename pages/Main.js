@@ -13,11 +13,13 @@ import Redes from "../components/Redes"
 import BackButton from "../components/BackButton"
 import CardTemplate from "../components/CardTemplate"
 import Helpmyteam from "../components/cards/portafolio/Helpmyteam";
+import PerfilCard from "../components/cards/PerfilCard";
 
 export default function Main() {
 
 	const cardStackers = [
 		MainCard,
+		PerfilCard,
 		HabilidadesTitleCard,
 		HabilidadesCard1,
 		HabilidadesCard2,
