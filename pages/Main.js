@@ -5,9 +5,9 @@ import { GoogleFonts } from "next-google-fonts";
 import Head from "next/head"
 import MainCard from "../components/cards/MainCard"
 import ExperienceTitle from "../components/cards/experience/ExperienceTitle"
-import HabilidadesTitleCard from "../components/cards/habilidades/HabilidadesTitleCard"
-import HabilidadesCard1 from "../components/cards/habilidades/HabilidadesCard1"
-import HabilidadesCard2 from "../components/cards/habilidades/HabilidadesCard2"
+import SkillsTitleCard from "../components/cards/skills/SkillsTitleCard"
+import SkillsCard1 from "../components/cards/skills/SkillsCard1"
+import SkillsCard2 from "../components/cards/skills/SkillsCard2"
 import Contacto from "../components/Contacto"
 import Redes from "../components/Redes"
 import BackButton from "../components/BackButton"
@@ -20,9 +20,9 @@ export default function Main() {
 	const cardStackers = [
 		MainCard,
 		PerfilCard,
-		HabilidadesTitleCard,
-		HabilidadesCard1,
-		HabilidadesCard2,
+		SkillsTitleCard,
+		SkillsCard1,
+		SkillsCard2,
 		ExperienceTitle,
 		Helpmyteam,
 	].reverse();

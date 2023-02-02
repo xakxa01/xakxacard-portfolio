@@ -1,10 +1,10 @@
 import { useContext } from 'react'
 import InfoContext from '../../../context/InfoContext';
-import useCardHabilidades from '../../../hook/useCardHabilidades';
+import useCardSkill from '../../../hook/useCardSkill';
 
-export default function HabilidadesCard1() {
+export default function SkillsCard1() {
 	const { iconArray } = useContext(InfoContext)
 	const iconArrayImprintCard = iconArray.slice(0, 6);
-	const card = useCardHabilidades(iconArrayImprintCard, 70)
+	const card = useCardSkill(iconArrayImprintCard, 70)
 	return card
 }

@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import styles from '../styles/habilidadesCard.module.scss'
+import styles from '../styles/skillsCard.module.scss'
 
-const useCardHabilidades = (array, size) => (
-	<div className={styles.habilidadesCards}>
+const useCardSkill = (array, size) => (
+	<div className={styles.skillsCards}>
 		<div className={styles.skillContainer}>
 			{array.map(icon => (
 				<div
@@ -25,5 +25,4 @@ const useCardHabilidades = (array, size) => (
 	</div>
 )
 
-
-export default useCardHabilidades;
+export default useCardSkill;
