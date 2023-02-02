@@ -28,7 +28,6 @@ export default function Main() {
 	].reverse();
 
 	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
-	console.log("currentIndex", currentIndex)
 
 	const currentIndexRef = useRef(currentIndex)
 
