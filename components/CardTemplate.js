@@ -20,7 +20,10 @@ export default function CardTemplate({ children, props, swiped }) {
 	 */
 	const onSwipe = (direction) => {
 		let gestureArray = [
-			
+			{
+				nameC: 'Helpmyteam',
+				visit: 'https://www.helpmyteam.com/',
+			}
 		]
 
 		gestureArray.map(({ nameC, visit, watchCode }) => {
@@ -40,7 +43,7 @@ export default function CardTemplate({ children, props, swiped }) {
 			{...props}
 		>
 			{children}
-		</TinderCard>
+		</TinderCard >
 	)
 
 }

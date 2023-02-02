@@ -3,12 +3,27 @@
 .redes__container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 5px;
+  justify-content: center;
   z-index: 10;
+  background: $negro;
+  padding: 5px;
+  border-radius: 20px 20px 0 0;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+  -ms-border-radius: 20px 20px 0 0;
+  -o-border-radius: 20px 20px 0 0;
 
   .redes__link {
-    margin: 2px 10px;
+    margin-inline: 5px;
     outline: none;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+
+    &:hover{
+      padding: 10px;
+    }
   }
 }

@@ -26,6 +26,7 @@ export default function Main() {
 	].reverse();
 
 	const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1)
+	console.log("currentIndex", currentIndex)
 
 	const currentIndexRef = useRef(currentIndex)
 
@@ -83,6 +84,16 @@ export default function Main() {
 		onCardLeftScreen: () => outOfFrame(index),
 	})
 
+	const goTo = (num) => {
+		const numArray = [];
+		for (let i = 1; i <= num; i++) numArray.push(i);
+
+		numArray.map(numb => {
+			updateCurrentIndex(numb)
+			childRefs[numb].current.restoreCard()
+		})
+	}
+
 	return (
 		<>
 			<Head>
@@ -110,6 +121,7 @@ export default function Main() {
 									</CardTemplate>
 								</InfoProvider>
 							))}
+
 						</div>
 					</div>
 

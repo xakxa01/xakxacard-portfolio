@@ -36,8 +36,8 @@ export default function Redes() {
 						<Image
 							src={redes.icon}
 							alt={redes.title}
-							width={50}
-							height={50}
+							width={30}
+							height={30}
 						/>
 					</a>
 				</div>
