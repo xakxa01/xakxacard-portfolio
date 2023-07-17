@@ -1,9 +1,14 @@
+import { FC } from "react";
 import { IconArrowMoveDown } from "@tabler/icons-react";
 import Tippy from "@tippyjs/react";
 import "tippy.js/animations/shift-away.css";
 import "tippy.js/dist/tippy.css";
 
-const ArrowDown = ({ text }) => (
+interface ArrowDownProps {
+  text: string;
+}
+
+const ArrowDown: FC<ArrowDownProps> = ({ text }) => (
   <Tippy
     content={text}
     placement="right"
