@@ -1,0 +1,29 @@
+.cardContainer {
+  @apply h-full w-full bg-negro pt-14 rounded-2xl overflow-hidden;
+}
+
+.mainContent {
+  @apply relative -mt-1 flex h-full w-full justify-center bg-azul;
+}
+
+.logo {
+  @apply mt-20;
+}
+
+.title {
+  @apply absolute left-3 top-14 flex flex-col items-center justify-center text-center font-inter text-lg font-bold text-white;
+}
+
+.title::before {
+  content: "<";
+  @apply absolute -top-7 left-0 rotate-90;
+}
+
+.title::after {
+  content: "/>";
+  @apply absolute -bottom-7 left-0 rotate-90;
+}
+
+.letter {
+  @apply m-0 block p-0;
+}

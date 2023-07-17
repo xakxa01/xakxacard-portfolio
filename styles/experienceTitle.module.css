@@ -1,0 +1,11 @@
+.container {
+  @apply flex h-full w-full items-center justify-center bg-gray-logo  bg-center bg-no-repeat;
+}
+
+.title {
+  @apply uppercase text-4xl font-bold text-negro3 text-center font-inter absolute;
+}
+
+.secondPart {
+  @apply text-azul;
+}

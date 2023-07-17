@@ -1,0 +1,19 @@
+.container {
+  @apply flex items-center justify-center w-full h-full;
+}
+
+.container::after {
+  @apply absolute right-0 top-0 m-4 h-14 w-14 bg-black-logo bg-contain bg-no-repeat content-[''];
+}
+
+.container::before {
+  @apply absolute left-0 bottom-0 rotate-180 m-4 h-14 w-14 bg-black-logo bg-contain bg-no-repeat content-[''];
+}
+
+.containerIcons {
+  @apply grid grid-cols-2 gap-10;
+}
+
+.icon {
+  @apply h-20 w-20 text-azul;
+}

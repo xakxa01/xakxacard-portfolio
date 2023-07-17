@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "target": "ESNext",
+    "jsx": "preserve",
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+, "components/cards/AboutMe.tsx", "components/cards/Experiences.tsx", "components/cards/ExperienceTitle.tsx", "components/cards/MainCard.tsx", "components/cards/Skills.tsx", "components/cards/SkillsTitle.tsx", "pages/index.tsx", "components/CardTemplate.tsx"  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,0 +1,35 @@
+.container {
+  @apply flex h-full w-full flex-col overflow-hidden rounded-2xl;
+}
+
+.container {
+  @apply font-inter text-negro;
+}
+
+.content {
+  @apply relative px-1 pt-1;
+}
+
+.enterpriseContainer {
+  @apply absolute -top-12 left-0 flex h-12 w-6/12 items-center justify-center rounded-tr-xl bg-white;
+}
+
+.titleEnterprise{
+  @apply font-nunito text-xl font-bold text-negro3;
+}
+
+.titleSkills {
+  @apply text-lg;
+}
+
+.description {
+  @apply my-2;
+}
+
+.listSkills {
+  @apply flex 
+}
+
+.skill {
+  @apply mx-1 text-azul;
+}

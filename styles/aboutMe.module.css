@@ -1,0 +1,47 @@
+.container {
+  @apply h-full w-full ;
+}
+
+.myPhoto {
+  @apply h-3/6 w-full overflow-hidden bg-myPhoto bg-cover bg-center rounded-t-2xl;
+}
+
+.containerInfo {
+  @apply absolute h-full w-full bg-white;
+}
+
+.mainTitle {
+  @apply absolute -top-16 left-0 z-10 flex h-16 w-5/12 items-center justify-center rounded-tr-2xl bg-white;
+}
+
+.title {
+  @apply rounded-2xl bg-verde p-2 text-center font-nunito text-xl font-bold text-negro3;
+}
+
+.info {
+  @apply p-2;
+}
+
+.subtitle {
+  @apply font-nunito text-base font-black uppercase text-negro3;
+}
+
+.text {
+  @apply my-2 font-inter text-sm font-medium text-negro3;
+}
+
+.languageListContainer {
+  @apply font-inter text-sm font-medium text-negro3;
+}
+
+.titleLanguage {
+  @apply mr-1;
+}
+
+.bottomSection {
+  @apply flex items-end justify-between;
+}
+
+.watchCodeContainer {
+  @apply flex items-center justify-center font-nunito font-bold text-negro3;
+}

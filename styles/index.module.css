@@ -1,0 +1,45 @@
+.background {
+  @apply flex h-screen w-screen items-center justify-center overflow-hidden bg-gradient-to-br from-negro2 to-negro to-75%;
+}
+
+.background::before {
+  @apply absolute left-0 z-10 h-full w-96 bg-big-logo bg-left bg-no-repeat md:hidden content-[''];
+}
+
+.background::after {
+  @apply absolute right-0 top-0 z-10 h-full w-96 bg-big-blob bg-no-repeat md:hidden content-[''];
+}
+
+.container {
+  @apply relative z-20 flex w-6/12 items-center justify-between md:flex-col;
+}
+
+.cardContainer {
+  @apply relative flex h-[36rem] w-96 items-end justify-center rounded-2xl  bg-black-logo bg-center bg-no-repeat;
+}
+
+.cardContainer::after {
+  @apply absolute h-10 w-10 animate-arrowLeft bg-arrow-left bg-center bg-no-repeat content-[''];
+}
+
+.tinderCard {
+  @apply absolute z-10 flex h-full w-full select-none items-center justify-center overflow-hidden rounded-2xl bg-white p-0.5;
+}
+
+@screen md {
+  .background {
+    @apply overflow-y-auto;
+  }
+
+  .container {
+    @apply top-48 w-11/12 overflow-hidden rounded-2xl;
+  }
+
+  .cardContainer::after {
+    @apply animate-arrowDown bg-arrow-down;
+  }
+
+  .formContainer {
+    @apply order-1 my-32;
+  }
+}

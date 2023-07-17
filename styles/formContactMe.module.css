@@ -1,0 +1,21 @@
+.contactoContainer {
+  @apply flex w-56 select-none flex-col items-center justify-center;
+}
+
+.letter1,
+.letter2 {
+  @apply text-blanco font-nunito text-4xl font-black;
+}
+
+.letter2 {
+  @apply text-azul;
+}
+
+.emailInput,
+.messageInput {
+  @apply text-negro3 my-1 block w-full rounded p-1 font-inter font-medium outline-none placeholder:text-gray-300;
+}
+
+.btnSubmit {
+  @apply bg-azul text-blanco w-full rounded p-1 font-nunito text-lg font-bold hover:bg-blue-600;
+}

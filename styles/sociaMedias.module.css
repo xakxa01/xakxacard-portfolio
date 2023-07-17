@@ -1,0 +1,7 @@
+.container {
+  @apply mb-1 flex items-center justify-center text-blanco;
+}
+
+.link {
+  @apply mx-0.5;
+}

@@ -1,0 +1,11 @@
+.container {
+  @apply flex h-full w-full flex-col justify-center rounded-2xl bg-white bg-gray-logo bg-center bg-no-repeat;
+}
+
+.title {
+  @apply flex h-96 rotate-90 items-end justify-center text-center font-inter text-7xl font-bold uppercase text-negro3;
+}
+
+.title::after {
+  @apply animate-terminal content-['s'];
+}
