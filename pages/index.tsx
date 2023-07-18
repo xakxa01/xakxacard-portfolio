@@ -13,8 +13,9 @@ import BackButton from "../components/BackButton";
 import FormContactMe from "../components/FormContactMe";
 import Tutorial from "../components/Tutorial";
 import { Inter, Nunito } from "next/font/google";
+import { API } from "react-tinder-card";
 
-type TchildRef = MutableRefObject<any>;
+type TchildRef = MutableRefObject<API>;
 
 const nunito = Nunito({ variable: "--nunito", subsets: ["latin"] });
 const inter = Inter({ variable: "--inter", subsets: ["latin"] });
@@ -69,7 +70,7 @@ const Home = () => {
   const swiped = (index: number) => updateCurrentIndex(index - 1);
 
   const configCard = (index: number) => ({
-    ref: childRefs[index],
+    ref: childRefs[index] as TchildRef,
     onCardLeftScreen: () => outOfFrame(index),
   });
 
@@ -91,18 +92,16 @@ const Home = () => {
             <div className={styles.cardContainer}>
               <Tutorial />
 
-              {cardStackers.map((card, index) => {
-                return (
-                  <CardTemplate
-                    key={index}
-                    swiped={() => swiped(index)}
-                    props={configCard(index)}
-                    link={card.link}
-                  >
-                    {card.component()}
-                  </CardTemplate>
-                );
-              })}
+              {cardStackers.map((card, index) => (
+                <CardTemplate
+                  key={index}
+                  link={card.link}
+                  props={configCard(index)}
+                  swiped={() => swiped(index)}
+                >
+                  {card.component()}
+                </CardTemplate>
+              ))}
             </div>
           </div>
         </div>

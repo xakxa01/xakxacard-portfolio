@@ -1,16 +1,13 @@
-import TinderCard from "react-tinder-card";
-import { FC, MutableRefObject, ReactNode } from "react";
+import TinderCard, { API } from "react-tinder-card";
+import { FC, ReactNode, MutableRefObject } from "react";
 
 type func = () => void;
 
 interface cardTemplateProps {
   swiped: func;
-  children: ReactNode;
   link?: string;
-  props: {
-    ref: MutableRefObject<any>;
-    onCardLeftScreen: func;
-  };
+  children: ReactNode;
+  props: any;
 }
 
 const openURL = (url: string) => {
