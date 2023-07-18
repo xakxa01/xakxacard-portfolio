@@ -1,5 +1,5 @@
-import TinderCard, { API } from "react-tinder-card";
-import { FC, ReactNode, MutableRefObject } from "react";
+import TinderCard from "react-tinder-card";
+import { FC, ReactNode } from "react";
 
 type func = () => void;
 
