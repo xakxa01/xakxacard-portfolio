@@ -9,11 +9,12 @@ import Skills from "../components/cards/Skills";
 import ExperienceTitle from "../components/cards/ExperienceTitle";
 import Experiences from "../components/cards/Experiences";
 import SocialMedias from "../components/SocialMedias";
-import BackButton from "../components/BackButton";
 import FormContactMe from "../components/FormContactMe";
 import Tutorial from "../components/Tutorial";
 import { Inter, Nunito } from "next/font/google";
 import { NextPage } from "next";
+import Controller from "../components/Controller";
+import { direction } from "../types";
 
 type TchildRef = MutableRefObject<any>;
 
@@ -47,8 +48,8 @@ const Home: NextPage = () => {
   const restoreCard = (index: number) =>
     (childRefs[index] as TchildRef)?.current.restoreCard();
 
-  // const swipe = () =>
-  // (childRefs[currentIndex] as TchildRef)?.current.swipe("right");
+  const swipe = (dir: direction) =>
+    (childRefs[currentIndex] as TchildRef)?.current.swipe(dir);
 
   const updateCurrentIndex = (val: number) => {
     setCurrentIndex(val);
@@ -87,8 +88,6 @@ const Home: NextPage = () => {
           <div className={styles.mainContainer}>
             <SocialMedias />
 
-            <BackButton goBack={goBack} />
-
             <div className={styles.cardContainer}>
               <Tutorial />
 
@@ -103,6 +102,11 @@ const Home: NextPage = () => {
                 </CardTemplate>
               ))}
             </div>
+
+            <Controller
+              swipe={swipe}
+              goBack={goBack}
+            />
           </div>
         </div>
       </div>

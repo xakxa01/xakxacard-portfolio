@@ -1,7 +1,7 @@
 import TinderCard from "react-tinder-card";
 import { FC, ReactNode } from "react";
+import { func } from "../types";
 
-type func = () => void;
 
 interface cardTemplateProps {
   swiped: func;

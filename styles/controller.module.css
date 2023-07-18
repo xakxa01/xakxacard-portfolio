@@ -1,0 +1,19 @@
+.container {
+  @apply flex items-center justify-center mt-2;
+}
+
+.keyIcons {
+  @apply text-azul;
+}
+
+.backIcon {
+  @apply text-white h-7 w-7 hover:-rotate-180 transition-all duration-300 absolute;
+}
+
+.backgroundIcon {
+  @apply text-azul;
+}
+
+.backBtn {
+  @apply flex justify-center items-center;
+}
