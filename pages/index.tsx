@@ -13,10 +13,9 @@ import BackButton from "../components/BackButton";
 import FormContactMe from "../components/FormContactMe";
 import Tutorial from "../components/Tutorial";
 import { Inter, Nunito } from "next/font/google";
-import { API } from "react-tinder-card";
 import { NextPage } from "next";
 
-type TchildRef = MutableRefObject<API>;
+type TchildRef = MutableRefObject<any>;
 
 const nunito = Nunito({ variable: "--nunito", subsets: ["latin"] });
 const inter = Inter({ variable: "--inter", subsets: ["latin"] });
