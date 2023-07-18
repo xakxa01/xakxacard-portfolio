@@ -14,6 +14,7 @@ import FormContactMe from "../components/FormContactMe";
 import Tutorial from "../components/Tutorial";
 import { Inter, Nunito } from "next/font/google";
 import { API } from "react-tinder-card";
+import { NextPage } from "next";
 
 type TchildRef = MutableRefObject<API>;
 
@@ -37,7 +38,7 @@ const cardStackers = [
   })),
 ].reverse();
 
-const Home = () => {
+const Home: NextPage = () => {
   const [currentIndex, setCurrentIndex] = useState(cardStackers.length - 1);
 
   const currentIndexRef = useRef(currentIndex);
