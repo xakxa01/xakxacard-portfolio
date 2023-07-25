@@ -83,11 +83,11 @@ const Home: NextPage = () => {
   const arrayMessage = [
     {
       message: "swipe down to watch this code",
-      indexCondition: currentIndex === findCardByName("AboutMe"),
+      indexCondition: currentIndex === findCardByName("I"),
     },
     {
       message: "swipe down to watch the web site",
-      indexCondition: currentIndex < findCardByName("ExperienceTitle"),
+      indexCondition: currentIndex < findCardByName("K"),
     },
   ];
 
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
     })
   );
 
-  console.log("first", findCardByName("I"));
+  console.log("first", findCardByName("K"));
 
   return (
     <div className={`${nunito.variable} ${inter.variable}`}>
