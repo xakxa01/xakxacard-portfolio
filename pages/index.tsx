@@ -91,12 +91,10 @@ const Home: NextPage = () => {
     },
   ];
 
-  console.log("currentIndex", currentIndex);
-
-  console.log("findCardByName('AboutMe')", findCardByName("AboutMe"));
   console.log(
-    'findCardByName("ExperienceTitle")',
-    findCardByName("ExperienceTitle")
+    cardStackers.map(({ component }, index) => {
+      return { name: component.name, index };
+    })
   );
 
   return (
