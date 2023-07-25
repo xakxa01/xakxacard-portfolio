@@ -124,7 +124,9 @@ const Home: NextPage = () => {
                 indexCondition && (
                   <p
                     key={message}
-                    className={styles.message}
+                    className={`${styles.message} ${
+                      indexCondition ? "opacity-100 block" : "hidden opacity-0"
+                    }`}
                   >
                     {message}
                   </p>
