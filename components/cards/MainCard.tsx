@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from "../../styles/mainCard.module.css";
 
+const title = "DEVELOPER".split("");
+
 const MainCard = () => (
   <div className={styles.cardContainer}>
     <svg
@@ -30,7 +32,7 @@ const MainCard = () => (
     </svg>
     <main className={styles.mainContent}>
       <h1 className={styles.title}>
-        {"DEVELOPER".split("").map((letter) => (
+        {title.map((letter) => (
           <span
             key={letter}
             className={styles.letter}

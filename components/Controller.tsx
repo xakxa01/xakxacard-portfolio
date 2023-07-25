@@ -13,6 +13,7 @@ import {
   IconSquareRoundedFilled,
 } from "@tabler/icons-react";
 import type { direction, func } from "../types";
+import Tippy from "@tippyjs/react";
 
 interface controllerP {
   goBack: func;
@@ -66,8 +67,7 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
 
   const keybinds = useCallback(
     ({ key }: KeyboardEvent) => {
-      type keyActionsKeys = keyof typeof keyActions;
-      keyActions[key as keyActionsKeys]?.();
+      keyActions[key as keyof typeof keyActions]?.();
 
       if (key === " ") goBack();
 
@@ -92,6 +92,7 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
         return (
           <button
             key={direction}
+            className="outline-none"
             onClick={() => {
               swipe(direction as direction);
               animationIcon(keyAction);
@@ -105,16 +106,22 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
         );
       })}
 
-      <button
-        className={styles.backBtn}
-        onClick={goBack}
+      <Tippy
+        content="Press space to go back"
+        placement="right"
+        animation="shift-away"
       >
-        <IconSquareRoundedFilled
-          className={styles.backgroundIcon}
-          size={49}
-        />
-        <IconRefresh className={styles.backIcon} />
-      </button>
+        <button
+          className={styles.backBtn}
+          onClick={goBack}
+        >
+          <IconSquareRoundedFilled
+            className={styles.backgroundIcon}
+            size={49}
+          />
+          <IconRefresh className={styles.backIcon} />
+        </button>
+      </Tippy>
     </div>
   );
 };
