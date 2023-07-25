@@ -17,28 +17,27 @@ interface expProps {
   link: string;
   description: string;
 }
-    
-const Experiences = () => {
-  const experiences = [
-    {
-      enterprise: "Helpmyteam",
-      position: "Frontend Developer",
-      period: "2022 - Present",
-      skills: [
-        IconBrandReact,
-        IconBrandNextjs,
-        IconBrandTailwind,
-        IconBrandGraphql,
-        IconBrandWordpress,
-      ],
-      image: "bg-helpmyteam",
-      link: "helpmyteam.com",
-      description:
-        "HelpMyTeam is a virtual answering service company. They provide cost-effective solutions for customers to ensure that calls are never missed and that customers receive professional and efficient service from well-trained virtual receptionists.",
-    },
-  ];
 
-  const ExperiencesComponent = ({exp}: {exp: expProps}) => (
+const experiences = [
+  {
+    enterprise: "Helpmyteam",
+    position: "Frontend Developer",
+    period: "2022 - Present",
+    skills: [
+      IconBrandNextjs,
+      IconBrandTailwind,
+      IconBrandGraphql,
+      IconBrandWordpress,
+    ],
+    image: "bg-helpmyteam",
+    link: "helpmyteam.com",
+    description:
+      "HelpMyTeam is a virtual answering service company. They provide cost-effective solutions for customers to ensure that calls are never missed and that customers receive professional and efficient service from well-trained virtual receptionists.",
+  },
+];
+
+const Experiences = () => {
+  const ExperiencesComponent = ({ exp }: { exp: expProps }) => (
     <div className={styles.container}>
       <div
         className={`${exp.image} h-4/6 w-full rounded-br-xl bg-cover bg-center`}
