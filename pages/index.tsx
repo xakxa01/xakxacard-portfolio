@@ -91,6 +91,14 @@ const Home: NextPage = () => {
     },
   ];
 
+  console.log("currentIndex", currentIndex);
+
+  console.log("findCardByName('AboutMe')", findCardByName("AboutMe"));
+  console.log(
+    'findCardByName("ExperienceTitle")',
+    findCardByName("ExperienceTitle")
+  );
+
   return (
     <div className={`${nunito.variable} ${inter.variable}`}>
       <HeadComponent />
