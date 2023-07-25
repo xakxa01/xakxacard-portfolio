@@ -119,21 +119,22 @@ const Home: NextPage = () => {
               ))}
             </div>
 
+            {arrayMessage.map(
+              ({ message, indexCondition }) =>
+                indexCondition && (
+                  <p
+                    key={message}
+                    className={styles.message}
+                  >
+                    {message}
+                  </p>
+                )
+            )}
+
             <Controller
               swipe={swipe}
               goBack={goBack}
             />
-
-            {arrayMessage.map(({ message, indexCondition }) => (
-              <p
-                key={message}
-                className={`${styles.message} ${
-                  indexCondition ? "opacity-100 block" : "hidden opacity-0"
-                }`}
-              >
-                {message}
-              </p>
-            ))}
           </div>
         </div>
       </div>

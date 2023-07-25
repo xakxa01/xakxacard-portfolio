@@ -107,18 +107,18 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
       })}
 
       <Tippy
-        content="Press space to go back"
         placement="right"
-        animation="shift-away"
         className="md:hidden"
+        animation="shift-away"
+        content="Press space to go back"
       >
         <button
-          className={styles.backBtn}
           onClick={goBack}
+          className={styles.backBtn}
         >
           <IconSquareRoundedFilled
-            className={styles.backgroundIcon}
             size={49}
+            className={styles.backgroundIcon}
           />
           <IconRefresh className={styles.backIcon} />
         </button>

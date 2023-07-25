@@ -48,6 +48,10 @@
   }
 
   .message {
-    @apply flex flex-col items-center justify-center text-center text-white text-2xl font-bold font-nunito transition-all;
+    @apply flex flex-col items-center justify-center text-center text-white text-lg font-bold font-nunito transition-all animate-fadeIn;
+  }
+
+  .mainContainer {
+    @apply mt-10;
   }
 }

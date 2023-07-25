@@ -17,3 +17,13 @@
 .backBtn {
   @apply flex justify-center items-center outline-none md:z-50;
 }
+
+@screen md {
+  .backIcon {
+    @apply h-10 w-10 hover:rotate-0;
+  }
+
+  .backgroundIcon {
+    @apply h-16 w-16;
+  }
+}
