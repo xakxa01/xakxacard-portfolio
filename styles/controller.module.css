@@ -15,5 +15,5 @@
 }
 
 .backBtn {
-  @apply flex justify-center items-center outline-none;
+  @apply flex justify-center items-center outline-none md:z-50;
 }

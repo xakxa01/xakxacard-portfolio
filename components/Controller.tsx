@@ -92,7 +92,7 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
         return (
           <button
             key={direction}
-            className="outline-none"
+            className="outline-none md:hidden"
             onClick={() => {
               swipe(direction as direction);
               animationIcon(keyAction);
@@ -110,6 +110,7 @@ const Controller: FC<controllerP> = ({ goBack, swipe }) => {
         content="Press space to go back"
         placement="right"
         animation="shift-away"
+        className="md:hidden"
       >
         <button
           className={styles.backBtn}

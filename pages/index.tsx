@@ -68,12 +68,28 @@ const Home: NextPage = () => {
     await restoreCard(newIndex);
   };
 
-  const swiped = (index: number) => updateCurrentIndex(index - 1);
+  const swiped = (index: number) => {
+    updateCurrentIndex(index - 1);
+  };
 
   const configCard = (index: number) => ({
     ref: childRefs[index] as TchildRef,
     onCardLeftScreen: () => outOfFrame(index),
   });
+
+  const findCardByName = (name: string) =>
+    cardStackers.findIndex(({ component }) => component.name === name);
+
+  const arrayMessage = [
+    {
+      message: "swipe down to watch this code",
+      indexCondition: currentIndex === findCardByName("AboutMe"),
+    },
+    {
+      message: "swipe down to watch the web site",
+      indexCondition: currentIndex < findCardByName("ExperienceTitle"),
+    },
+  ];
 
   return (
     <div className={`${nunito.variable} ${inter.variable}`}>
@@ -107,6 +123,17 @@ const Home: NextPage = () => {
               swipe={swipe}
               goBack={goBack}
             />
+
+            {arrayMessage.map(({ message, indexCondition }) => (
+              <p
+                key={message}
+                className={`${styles.message} ${
+                  indexCondition ? "opacity-100 block" : "hidden opacity-0"
+                }`}
+              >
+                {message}
+              </p>
+            ))}
           </div>
         </div>
       </div>

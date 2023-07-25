@@ -26,13 +26,17 @@
   @apply absolute z-10 flex h-full w-full select-none items-center justify-center overflow-hidden rounded-2xl bg-white p-0.5;
 }
 
+.message {
+  @apply hidden;
+}
+
 @screen md {
   .background {
     @apply overflow-y-auto;
   }
 
   .container {
-    @apply top-48 w-11/12 overflow-hidden rounded-2xl;
+    @apply top-48 rounded-2xl;
   }
 
   .cardContainer::after {
@@ -41,5 +45,9 @@
 
   .formContainer {
     @apply order-1 my-32;
+  }
+
+  .message {
+    @apply flex flex-col items-center justify-center text-center text-white text-2xl font-bold font-nunito transition-all;
   }
 }

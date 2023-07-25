@@ -15,7 +15,7 @@ const ArrowDown: FC<ArrowDownProps> = ({ text }) => (
     animation="shift-away"
     duration={500}
   >
-    <IconArrowMoveDown className="animate-bounce text-negro3" />
+    <IconArrowMoveDown className="animate-bounce text-negro3 md:hidden" />
   </Tippy>
 );
 
