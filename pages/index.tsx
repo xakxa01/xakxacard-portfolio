@@ -83,15 +83,21 @@ const Home: NextPage = () => {
   const arrayMessage = [
     {
       message: "swipe down to watch this code",
-      indexCondition: currentIndex === findCardByName("AboutMe" || "I"),
+      indexCondition: currentIndex === findCardByName("AboutMe"),
     },
     {
       message: "swipe down to watch the web site",
-      indexCondition: currentIndex < findCardByName("ExperienceTitle" || "K"),
+      indexCondition: currentIndex < findCardByName("ExperienceTitle"),
     },
   ];
 
-  console.log(findCardByName("I"));
+  console.log(
+    cardStackers.map(({ component }, index) => {
+      return { name: component.name, index };
+    })
+  );
+
+  console.log("first", findCardByName("I"));
 
   return (
     <div className={`${nunito.variable} ${inter.variable}`}>
