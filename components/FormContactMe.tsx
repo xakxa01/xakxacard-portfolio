@@ -20,8 +20,8 @@ const FormContactMe = () => {
   ) => {
     await emailJS
       .send(
-        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
         values,
         process.env.NEXT_PUBLIC_PUBLIC_KEY
       )
@@ -47,26 +47,26 @@ const FormContactMe = () => {
       >
         <Form className={styles.form}>
           <Field
-            type="email"
             className={styles.emailInput}
             placeholder="your email"
+            type="email"
             name="email"
             required
           />
 
           <Field
+            className={styles.messageInput}
+            placeholder="your message"
             name="message"
             as="textarea"
             cols="30"
             rows="5"
-            className={styles.messageInput}
-            placeholder="your message"
             required
           />
 
           <button
-            type="submit"
             className={styles.btnSubmit}
+            type="submit"
           >
             Send
           </button>
